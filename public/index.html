@@ -252,7 +252,7 @@
     }
     
     function insertData(data){
-        for (const [key, value] of Object.entries(JSON.parse(xhr.response))) {
+        for (const [key, value] of Object.entries(data)) {
             document.getElementById(key).innerHTML = value;
             document.getElementById(key+"_back").innerHTML = value;
         }
