@@ -250,7 +250,7 @@
       let existClassFlipped = document.getElementById("card").classList.contains("flipped");
             
       for (const [key, value] of Object.entries(JSON.parse(xhr.response))) {
-        if (existClassFlipped) {
+        if (!existClassFlipped) {
           document.getElementById(key + "_back").innerHTML = value;
         } else {
           document.getElementById(key).innerHTML = value;
