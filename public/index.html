@@ -247,7 +247,7 @@
         xhr.send();
         
         xhr.onload = function() {
-            for (const [key, value] of Object.entries(xhr.response)) {
+            for (const [key, value] of Object.entries(JSON.parse(xhr.response))) {
                 document.getElementById(key).innerHTML = value;
                 document.getElementById(key+"_back").innerHTML = value;
             }
