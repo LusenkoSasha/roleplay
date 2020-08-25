@@ -241,30 +241,43 @@
     </section>
 </div>
 <script>
-    function request(){
+    function callApi(){
         let xhr = new XMLHttpRequest();
         xhr.open('GET', '/random.php');
         xhr.send();
+        
         xhr.onload = function() {
-            for (const [key, value] of Object.entries(JSON.parse(xhr.response))) {
-                document.getElementById(key).innerHTML = value;
-                document.getElementById(key+"_back").innerHTML = value;
-            }
+            return JSON.parse(xhr.response);
         };
     }
-
+    
+    function insertData(data){
+        for (const [key, value] of Object.entries(JSON.parse(xhr.response))) {
+            document.getElementById(key).innerHTML = value;
+            document.getElementById(key+"_back").innerHTML = value;
+        }
+    }
+    
     function openCard(){
 
         var card = document.getElementById('card');
         setTimeout(function (){
-            request();
             card.classList.toggle('flipped');
         }, 1000);
 
     }
-    document.getElementById('btn').addEventListener('click', request, false);
-    document.getElementById('btn-1').addEventListener('click', openCard, false);
+    document.getElementById('btn').addEventListener('click', function (){
+        insertData(callApi());
+        openCard();
+    }, false);
+    document.getElementById('btn-1').addEventListener('click', function (){
+        insertData(callApi());
+        openCard();
+    }, false);
 
+    if(window.location.toString().includes("#wrapper-1")){
+        insertData(callApi());
+    }
 
 
 </script>
