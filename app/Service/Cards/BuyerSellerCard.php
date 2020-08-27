@@ -11,7 +11,7 @@ class BuyerSellerCard extends BaseCard implements CardContract
     {
         $this->setDefaultFields();
         $this->cardDTO->setPropertyCriteria(
-            $this->getRandFieldsToString($this->dataDTO->getPropertyCriteria(), 2)
+            $this->getRandFieldsToString($this->dataDTO->getPropertyCriteriaForBuyerSeller(), 1)
         );
         $this->cardDTO->setSurfaceMotivation(
             $this->getRandFieldsToString($this->dataDTO->getSurfaceMotivationForSellers(), 1)

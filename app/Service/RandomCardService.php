@@ -21,7 +21,7 @@ class RandomCardService
     {
         return [
             "client_type" => $cardDTO->getClientType(),
-//            "personality" => $cardDTO->getPersonality(),
+            "personality" => $cardDTO->getPersonality(),
             "profession" => $cardDTO->getProfession(),
             "property_criteria" => $cardDTO->getPropertyCriteria(),
             "area" => $cardDTO->getArea(),

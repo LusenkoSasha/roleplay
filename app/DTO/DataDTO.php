@@ -75,6 +75,11 @@ class DataDTO
     public $personality;
 
     /**
+     * @var array
+     */
+    public $propertyCriteriaForBuyerSeller;
+
+    /**
      * @return array
      */
     public function getClientType()
@@ -296,5 +301,21 @@ class DataDTO
     public function setPersonality($personality)
     {
         $this->personality = $personality;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPropertyCriteriaForBuyerSeller()
+    {
+        return $this->propertyCriteriaForBuyerSeller;
+    }
+
+    /**
+     * @param array $propertyCriteriaForBuyerSeller
+     */
+    public function setPropertyCriteriaForBuyerSeller($propertyCriteriaForBuyerSeller)
+    {
+        $this->propertyCriteriaForBuyerSeller = $propertyCriteriaForBuyerSeller;
     }
 }
