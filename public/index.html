@@ -247,7 +247,7 @@
   </section>
 </div>
 <script>
-  function callApiAndInsertData() {
+  function callApiAndInsertData(flipped = false) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', '/random.php');
     xhr.send();
@@ -256,7 +256,7 @@
       let existClassFlipped = document.getElementById("card").classList.contains("flipped");
 
       for (const [key, value] of Object.entries(JSON.parse(xhr.response))) {
-        if (!existClassFlipped) {
+        if (!existClassFlipped && flipped) {
           document.getElementById(key + "_back").innerHTML = value;
         } else {
           document.getElementById(key).innerHTML = value;
@@ -278,7 +278,7 @@
     callApiAndInsertData();
   }, false);
   document.getElementById('btn-1').addEventListener('click', function () {
-    callApiAndInsertData()
+    callApiAndInsertData(true)
     openCard();
   }, false);
 
