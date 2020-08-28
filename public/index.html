@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +45,7 @@
                       <img src="img/Vector-1.png" alt="">
                     </div>
                     <div class="text">
-                      <p>Financial advisor:</p>
+                      <p>Profession:</p>
                       <span id="profession">Graphic Designer</span>
                     </div>
                   </li>
@@ -263,7 +254,7 @@
 
     xhr.onload = function () {
       let existClassFlipped = document.getElementById("card").classList.contains("flipped");
-            
+
       for (const [key, value] of Object.entries(JSON.parse(xhr.response))) {
         if (!existClassFlipped) {
           document.getElementById(key + "_back").innerHTML = value;
