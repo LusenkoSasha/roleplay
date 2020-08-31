@@ -12,6 +12,11 @@ class CardDTO
     /**
      * @var string|null
      */
+    private $preApproved;
+
+    /**
+     * @var string|null
+     */
     private $personality;
 
     /**
@@ -233,5 +238,21 @@ class CardDTO
     public function setClientType(string $clientType)
     {
         $this->clientType = $clientType;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getPreApproved()
+    {
+        return $this->preApproved;
+    }
+
+    /**
+     * @param string|null $preApproved
+     */
+    public function setPreApproved($preApproved)
+    {
+        $this->preApproved = $preApproved;
     }
 }

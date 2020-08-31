@@ -30,7 +30,8 @@ class RandomCardService
             "pets" => $cardDTO->getPets(),
             "surface_motivation" => $cardDTO->getSurfaceMotivation(),
             "hidden_motivation" => $cardDTO->getHiddenMotivation(),
-            "red_flags" => $cardDTO->getRedFlags()
+            "red_flags" => $cardDTO->getRedFlags(),
+            "pre_approved" => $cardDTO->getPreApproved()
         ];
     }
 
@@ -42,7 +43,7 @@ class RandomCardService
             $client = $googleApi->getClient();
             $service = new Google_Service_Sheets($client);
             $spreadsheetId = '14EUACwmyBa5UWWIiLL3VQCtY3KvsoQs94Tvzdgw1UzA';
-            $range = 'Sheet1!A1:01000';
+            $range = 'Sheet1!A1:P1000';
             $response = $service->spreadsheets_values->get($spreadsheetId, $range, ["majorDimension" => "COLUMNS"]);
             $values = $response->getValues();
             return $this->convertData($values);

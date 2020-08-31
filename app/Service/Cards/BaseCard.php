@@ -23,6 +23,7 @@ class BaseCard
 
     public function setDefaultFields()
     {
+        $this->cardDTO->setPreApproved($this->getRandFieldsToString($this->dataDTO->getPreApproved(), 1));
         $this->cardDTO->setPersonality($this->getRandFieldsToString($this->dataDTO->getPersonality(), 1));
         $this->cardDTO->setPets($this->getRandFieldsToString($this->dataDTO->getPets(), 1));
         $this->cardDTO->setFamilyStatus($this->getRandFieldsToString($this->dataDTO->getFamilyStatus(), 1));

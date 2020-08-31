@@ -7,6 +7,11 @@ class DataDTO
     /**
      * @var array
      */
+    public $preApproved;
+    
+    /**
+     * @var array
+     */
     public $clientType;
 
     /**
@@ -317,5 +322,21 @@ class DataDTO
     public function setPropertyCriteriaForBuyerSeller($propertyCriteriaForBuyerSeller)
     {
         $this->propertyCriteriaForBuyerSeller = $propertyCriteriaForBuyerSeller;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPreApproved()
+    {
+        return $this->preApproved;
+    }
+
+    /**
+     * @param array $preApproved
+     */
+    public function setPreApproved($preApproved)
+    {
+        $this->preApproved = $preApproved;
     }
 }
